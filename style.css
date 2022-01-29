@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  color: #333;
+  height: 100vh;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(200px);
+  overflow: hidden;
+}
+.game {
+  display: flex;
+  height: 100%;
+}
+.player {
+  flex: 1 0 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+}
+.player__name {
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 7vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+.player__score {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 300;
+  color: #c7365f;
+}
+.declare-winner {
+  font-size: clamp(1.6rem, 7vw, 2.5rem);
+  font-weight: 900;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .player__name {
+  font-weight: 700;
+}
+.player--active .player__score {
+  font-weight: 400;
+}
+.current {
+  background: #c7365f;
+  margin: 0 auto;
+  border-radius: 9px;
+  color: #fff;
+  opacity: 0.8;
+  padding: 1rem;
+  text-align: center;
+}
+.player--active .current {
+  opacity: 1;
+}
+.current__label {
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  font-size: clamp(0.6rem, 7vw, 1.2rem);
+}
+.current__score {
+  font-size: clamp(1rem, 7vw, 2.5rem);
+}
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  border-radius: 50rem;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: #333;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 1.2rem;
+}
+.btn::first-letter {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+.btn--new-game {
+  top: 1rem;
+}
+.btn--how-to {
+  top: 17rem;
+}
+.btn--roll {
+  top: 21rem;
+}
+.btn--hold {
+  top: 25rem;
+}
+.dice-image {
+  position: absolute;
+  left: 50%;
+  top: 8rem;
+  transform: translateX(-50%);
+  height: 5rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+/* For winning player */
+.player--win {
+  background-color: #2f2f2f;
+}
+.player--win .player__name {
+  font-weight: 900;
+  color: #c7365f;
+}
+/* modal section */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  line-height: 1.5;
+  padding: 2rem;
+  z-index: 5;
+}
+.modal h2 {
+  color: #c7365f;
+  margin-bottom: 1rem;
+}
+.hidden {
+  display: none;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (min-width: 767px) {
+  main {
+    width: 70vw;
+    height: 95vh;
+    border-radius: 20px;
+  }
+  .current {
+    padding: 1rem 3rem;
+  }
+  .modal {
+    width: 75%;
+    padding: 2rem 5rem;
+  }
+}
