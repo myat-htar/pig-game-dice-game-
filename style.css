@@ -99,21 +99,37 @@ main {
   backdrop-filter: blur(10px);
   padding: 0.8rem 1.2rem;
 }
+.btn:not(.btn--new-game):hover,
+.btn:not(.btn--new-game):active {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn--new-game:hover,
+.btn--new-game:active {
+  background-color: #c7365f;
+  color: #fff;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: none;
+}
 .btn::first-letter {
   font-size: 1.3rem;
   margin-right: 0.5rem;
 }
 .btn--new-game {
   top: 1rem;
+  transition: all 0.2s;
 }
 .btn--how-to {
   top: 17rem;
+  transition: all 0.2s;
 }
 .btn--roll {
   top: 21rem;
+  transition: all 0.2s;
 }
 .btn--hold {
   top: 25rem;
+  transition: all 0.2s;
 }
 .dice-image {
   position: absolute;

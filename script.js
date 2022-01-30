@@ -76,8 +76,12 @@ btnHold.addEventListener("click", function () {
         `.player--${activePlayer} .declare-winner`
       ).textContent = "You Win!";
     } else {
-      // Switch player
-      switchPlayer();
+      if (currentScore > 0) {
+        // Switch player
+        switchPlayer();
+      } else {
+        alert("You have to roll dice to get score!!");
+      }
     }
   }
 });
